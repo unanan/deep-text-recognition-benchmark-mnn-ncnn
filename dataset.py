@@ -167,9 +167,9 @@ class LmdbDataset(Dataset):
 
                     # By default, images containing characters which are not in opt.character are filtered.
                     # You can add [UNK] token to `opt.character` in utils.py instead of this filtering.
-                    # out_of_char = f'[^{self.opt.character}]'
-                    out_of_char = '[^\-\.0123456789]'
-                    # print(out_of_char, label.lower())
+                    out_of_char = f'[^{self.opt.character}]'
+                    # out_of_char = '[^\-\.0123456789]'  #TODO: This is my regex to filter out the characters in my vocabulary
+
                     if re.search(out_of_char, label.lower()):
                         continue
 
