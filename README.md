@@ -20,6 +20,7 @@ Parameters | Position | Remarks
 ```valid_data``` | [```train.py```, Line:224](./train.py#L224) | lmdb valset folder
 ```imgH``` | [```train.py```, Line:246](./train.py#L246) | height of the resized image 
 ```imgW``` | [```train.py```, Line:247](./train.py#L247) | width of the resized image
+```character``` | [```train.py```, Line:249](./train.py#L249) | all your characters you want to recognize
 
 - The output weights (end with ```.pth```) are saved in the ```./saved_models``` in default.
 - Then click the "run" button (if you use IDE with Python interpreter) to train.
