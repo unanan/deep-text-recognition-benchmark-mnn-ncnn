@@ -14,7 +14,8 @@ from utils import AttnLabelConverter
 from model import Model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-
+# Global Parameters
+#TODO: Unsafe global parameters
 model = None
 converter = None
 batch_max_length=25
@@ -23,6 +24,7 @@ imgH=32
 transform = None
 character = "0123456789abcdefghijklmnopqrstuvwxyz"
 model_path = "./TPS-ResNet-BiLSTM-Attn.pth"
+
 
 class ResizeNormalize(object):
 
@@ -49,11 +51,15 @@ def init_model(model_path):
     num_class = len(converter.character)
 
     model = Model(imgW, imgH, num_class,batch_max_length)
-    model = model = torch.nn.DataParallel(model).to(device)
-
-    # load model
-    model.load_state_dict(torch.load(model_path, map_location=device))
-
+    try:
+        model = model.to(device)
+        # load model
+        model.load_state_dict(torch.load(model_path, map_location=device))
+    except:
+        model = torch.nn.DataParallel(model).to(device)
+        # load model
+        model.load_state_dict(torch.load(model_path, map_location=device))
+        print("Warning: Loaded model as data-parallel form..")
 
     transform = ResizeNormalize((imgW, imgH))
 
