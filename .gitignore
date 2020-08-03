@@ -4,3 +4,9 @@ __pycache__/
 saved_models/
 
 .idea/
+
+inference/pytorch_py/TPS-ResNet-BiLSTM-Attn.pth
+
+inference/mnn_cpp/TPS-ResNet-BiLSTM-Attn.mnn
+
+inference/pytorch_py/TPS-ResNet-BiLSTM-Attn.onnx
