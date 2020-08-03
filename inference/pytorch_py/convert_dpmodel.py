@@ -1,5 +1,5 @@
 ### Note: Use this script to convert the data-parallel model to single-parallel model
-##  Refer to:
+##  Refer to: https://discuss.pytorch.org/t/solved-keyerror-unexpected-key-module-encoder-embedding-weight-in-state-dict/1686/4
 
 import fire
 import torch

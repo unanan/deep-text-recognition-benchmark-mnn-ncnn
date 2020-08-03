@@ -10,7 +10,7 @@
 #### 1. Prepare datasets
 - Please check the [**"When you need to train on your own dataset or Non-Latin language datasets."**](https://github.com/clovaai/deep-text-recognition-benchmark#when-you-need-to-train-on-your-own-dataset-or-non-latin-language-datasets) in the README.md of the original repo.
 - Once when you prepare the datasets well, there should be "**```data.mdb```**" and "**```lock.mdb```**" under **the output folder**.
-- Assign the value of "**train_data**" and "**valid_data**" as the absolute addresses of **the output folders**.
+- Assign the value of "**train_data**" and "**valid_data**" with the absolute addresses of **the output folders**.
 #### 2. Start to train
 - Modify the values in ```train.py```:
 
@@ -24,8 +24,8 @@ Parameters | Position | Remarks
 ```character``` | [```train.py```, Line:250](./train.py#L249) | all your characters of your vocabulary you want to recognize
 - **IMPORTANT:If there're special characters in your vocabulary(e.g."-"), please modify the [```dataset.py``` Line:170](./dataset.py#L170).**
 
-- The output weights (end with ```.pth```) are saved in the ```./saved_models``` in default.
-- Then click the "run" button (if you use IDE with Python interpreter) to train.
+- The output weights (end with ```.pth```) are saved in the ```./saved_models``` by default.
+- Then run ```python train.py```.
 
 ## Visualization
 - You can use **netron** to open your ```*.pth``` to view the model architecture.

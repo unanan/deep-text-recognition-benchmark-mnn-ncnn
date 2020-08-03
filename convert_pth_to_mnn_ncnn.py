@@ -1,4 +1,3 @@
-# Refer to
 import os
 import torch
 import torch.nn as nn
@@ -22,8 +21,8 @@ num_class = len(converter.character)
 model_path = "./inference/pytorch_py/TPS-ResNet-BiLSTM-Attn.pth"
 output_path = "./inference/mnn_cpp/TPS-ResNet-BiLSTM-Attn.mnn"
 
-
 target = "mnn"
+
 
 def pth2mnn(model_path,output_path):
     model_root_name = os.path.splitext(model_path)[0]
@@ -53,6 +52,7 @@ def pth2mnn(model_path,output_path):
 
     print("ONNX converted to MNN finished!")
     return
+
 
 def pth2ncnn(model_path):
     raise NotImplementedError()
